@@ -1,17 +1,17 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6)
 project(examples)
 
-INCLUDE($ENV{OpenCV_DIR}/OpenCVConfig.cmake)
-INCLUDE_DIRECTORIES (${OPENCV_INCLUDE_DIR})
+include($ENV{OpenCV_DIR}/OpenCVConfig.cmake)
+include_directories(${OPENCV_INCLUDE_DIR})
 
-ADD_LIBRARY(natelib natelib.cpp)
+add_executable(example1 example2-1.cpp)
+add_executable(example2 example2-2.cpp)
+add_executable(example3 example2-3.cpp)
+add_executable(example4 example2-4.cpp)
 
-ADD_EXECUTABLE(example1 example2-1.cpp)
-ADD_EXECUTABLE(example2 example2-2.cpp)
-ADD_EXECUTABLE(example3 example2-3.cpp)
-
-TARGET_LINK_LIBRARIES (example1 ${OpenCV_LIBS} natelib)
-TARGET_LINK_LIBRARIES (example2 ${OpenCV_LIBS} natelib)
-TARGET_LINK_LIBRARIES (example3 ${OpenCV_LIBS} natelib)
+target_link_libraries(example1 ${OpenCV_LIBS})
+target_link_libraries(example2 ${OpenCV_LIBS})
+target_link_libraries(example3 ${OpenCV_LIBS})
+target_link_libraries(example4 ${OpenCV_LIBS})
 
 
