@@ -16,7 +16,6 @@ int main( int argc, char** argv ) {
 	while(1) {
 	    frame = cvQueryFrame( capture );
 	    if( !frame) break;
-		cvSmooth( frame, augframe, CV_BLUR, 3, 3 );
 	    cvShowImage( "Example2", frame );
 	    char c = cvWaitKey(73);
 	    if( c == 27 ) break;
