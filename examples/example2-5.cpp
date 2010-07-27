@@ -21,7 +21,7 @@ int main( int argc, char** argv ) {
 	    frame = cvQueryFrame( capture );
 	    if( !frame) break;
 		augframe = cvCreateImage( cvGetSize( frame ), IPL_DEPTH_8U, 3 );
-		cvSmooth( frame, augframe, CV_BLUR, 3, 3 );
+		cvSmooth( frame, augframe, CV_BILATERAL, 3, 3 );
 	    cvShowImage( "Example2", frame );
 	    cvShowImage( "output", augframe );
 	    char c = cvWaitKey(73);

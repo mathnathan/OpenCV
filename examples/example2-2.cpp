@@ -13,11 +13,12 @@ int main( int argc, char** argv ) {
 	cvMoveWindow( "Example2", 100, 100);
 	CvCapture* capture = cvCreateFileCapture( argv[1] );
 
+    double fps = cvGetCaptureProperty( capture, CV_CAP_PROP_FPS );
 	while(1) {
 	    frame = cvQueryFrame( capture );
 	    if( !frame) break;
 	    cvShowImage( "Example2", frame );
-	    char c = cvWaitKey(73);
+	    char c = cvWaitKey( 33 );
 	    if( c == 27 ) break;
 	}
 
